@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 // Use as rotas das APIs
 // app.use(gatewayRoutes);
 // app.use(historicoRoutes);
-app.use(resultadosRoutes);
+app.use(historicoRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
