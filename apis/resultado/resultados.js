@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sql = require('mssql');
-const dbConfig = require('../../databases/databaseconfig_resultados');
+const dbConfig = require('./databaseconfig_resultados');
 
 router.get('/resultados', async (req, res) => {
     try {

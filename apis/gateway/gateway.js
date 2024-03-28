@@ -7,4 +7,6 @@ router.get('/gateway', (req, res) => {
   res.send('Esta é a API 1');
 });
 
+
+
 module.exports = router;

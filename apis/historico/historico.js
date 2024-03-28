@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sql = require('mssql');
-const dbConfig = require('../../databases/databaseconfig_historico');
+const dbConfig = require('./databaseconfig_historico');
 
 router.get('/historico', async (req, res) => {
     try {
