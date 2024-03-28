@@ -7,9 +7,9 @@ const resultadosRoutes = require('./apis/resultados');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Use as rotas das APIs
-// app.use(gatewayRoutes);
-// app.use(historicoRoutes);
+//Use as rotas das APIs
+app.use(gatewayRoutes);
+app.use(historicoRoutes);
 app.use(resultadosRoutes);
 
 app.listen(PORT, () => {
