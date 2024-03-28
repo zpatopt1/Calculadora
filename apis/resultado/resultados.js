@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const sql = require('mssql');
-const dbConfig = require('../databases/databaseconfig_historico');
+const dbConfig = require('../../databases/databaseconfig_resultados');
 
-router.get('/historico', async (req, res) => {
+router.get('/resultados', async (req, res) => {
     try {
         // Conecta ao banco de dados
         await sql.connect(dbConfig);
@@ -14,6 +14,8 @@ router.get('/historico', async (req, res) => {
 
         // Fecha a conexão com o banco de dados
         await sql.close();
+        
+        await this.apply.listen(3001);
 
         // Retorna os resultados
         res.json(result.recordset);

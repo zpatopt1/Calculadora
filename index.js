@@ -1,8 +1,8 @@
 // index.js
 const express = require('express');
-const gatewayRoutes = require('./apis/gateway');
-const historicoRoutes = require('./apis/historico');
-const resultadosRoutes = require('./apis/resultados');
+const gatewayRoutes = require('./apis/gateway/gateway');
+const historicoRoutes = require('./apis/historico/historico');
+const resultadosRoutes = require('./apis/resultado/resultados');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
