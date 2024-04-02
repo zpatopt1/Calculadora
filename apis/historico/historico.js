@@ -9,8 +9,7 @@ router.get('/historico', async (req, res) => {
         await sql.connect(dbConfig);
 
         // Executa a consulta SQL
-        const result = await sql.query('SELECT * FROM resultados');
-        console.log(result);
+        const result = await sql.query('SELECT * FROM historico');
 
         // Fecha a conexão com o banco de dados
         await sql.close();
