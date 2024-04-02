@@ -49,5 +49,26 @@ router.post('/historico', async (req, res) => {
     }
 });
 
+// Adicione um novo endpoint para deletar todos os registros do histórico
+router.delete('/historico', async (req, res) => {
+    try {
+        // Conecta ao banco de dados
+        await sql.connect(dbConfig);
+
+        // Executa a consulta SQL para deletar todos os registros do histórico
+        await sql.query`DELETE FROM historico `;
+        await sql.query`DBCC CHECKIDENT ('historico', RESEED, 0)`;
+        // Fecha a conexão com o banco de dados
+        await sql.close();
+
+        // Retorna uma resposta de sucesso
+        res.status(200).send('Todos os registros do histórico foram deletados com sucesso.');
+    } catch (err) {
+        console.error('Erro ao deletar registros do histórico:', err);
+        res.status(500).send('Erro ao deletar registros do histórico');
+    }
+});
+
+
 
 module.exports = router;
