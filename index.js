@@ -7,6 +7,14 @@ const { PublicClientApplication } = require('@azure/msal-node');
 
 const app = express();
 
+const msalConfig = {
+    auth: {
+        clientId: '67b90523-50cf-4730-aa2c-8984a940b712',
+        authority: 'https://login.microsoftonline.com/e105ec9f-77f4-4415-b798-5be56b6f10d8',
+        clientSecret: 'VmH8Q~QSur50hQTT0sis84SGK9eEcSxHMtScFdoz',
+        RedirectUri: 'http://localhost:3000/callback', // Defina este URI no portal do Azure AD
+    },
+};
 
 const pca = new PublicClientApplication(msalConfig);
 
