@@ -6,7 +6,7 @@ const resultadosRoutes = require('./apis/resultado/resultados');
 const { PublicClientApplication } = require('@azure/msal-node');
 
 const app = express();
-;
+
 
 const pca = new PublicClientApplication(msalConfig);
 
