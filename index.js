@@ -5,10 +5,12 @@ const historicoRoutes = require('./apis/historico/historico');
 const resultadosRoutes = require('./apis/resultado/resultados');
 
 const app = express();
+
 const PORT = process.env.PORT || 3000;
 
 // Habilita o CORS
 app.use(cors());
+app.use(express.json());
 
 // Use as rotas das APIs
 app.use(gatewayRoutes);
